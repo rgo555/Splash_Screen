@@ -5,18 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class Splash_Screen : MonoBehaviour
 {
+    public float time;
+    Scene scene;
     void Start()
     {
-        Invoke("LoadMainMenu", 4);
+        scene = SceneManager.GetActiveScene();
+        Invoke("LoadMainMenu", time);
     }
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(scene.buildIndex + 1);
     }
 
-    void Update()
-    {
-        
-    }
+    
 }
